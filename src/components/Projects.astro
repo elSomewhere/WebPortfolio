@@ -1,0 +1,21 @@
+---
+import projects from '../data/projects.ts';
+---
+<section id="projects" class="py-32 px-6">
+  <h2 class="headline text-3xl mb-10"><span>Projects</span></h2>
+
+  <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+    {projects.map(p => (
+      <a class="group relative block" href={`/demos/${p.slug}`}>
+        <img src={p.thumb} alt={p.title}
+             class="w-full aspect-video object-cover transition-transform duration-500
+                    group-hover:scale-110 group-hover:rotate-[0.5deg]" loading="lazy" />
+        <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100
+                    transition-opacity grid place-content-center text-center p-4">
+          <h3 class="text-lg font-bold mb-1">{p.title}</h3>
+          <p class="text-xs opacity-75">{p.description}</p>
+        </div>
+      </a>
+    ))}
+  </div>
+</section> 

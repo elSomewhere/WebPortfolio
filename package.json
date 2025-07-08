@@ -14,7 +14,12 @@
     "type": "git",
     "url": "git+https://github.com/elSomewhere/WebPortfolio.git"
   },
-  "keywords": ["portfolio", "webgpu", "generative-art", "visualization"],
+  "keywords": [
+    "portfolio",
+    "webgpu",
+    "generative-art",
+    "visualization"
+  ],
   "author": "Esteban Lanter",
   "license": "MIT",
   "bugs": {
@@ -22,7 +27,9 @@
   },
   "homepage": "https://estebanlanter.art",
   "devDependencies": {
+    "@astrojs/tailwind": "^6.0.2",
     "astro": "^5.1.1",
+    "tailwindcss": "^4.1.11",
     "vite": "^6.0.5"
   }
 }
