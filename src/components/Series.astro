@@ -1,0 +1,20 @@
+---
+import { series } from '../data/projects.ts';
+---
+<section id="series" class="py-32 px-6">
+  <h2 class="headline mb-4"><span>{series.title}</span></h2>
+  <p class="max-w-2xl mb-12 opacity-80" innerHTML={series.synopsis}/>
+  
+  <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+    {series.works.map(w => (
+      <a href={`/demos/${w.slug}/dist/index.html`} class="group relative block">
+        <img src={w.thumb} alt={w.title}
+             class="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-110"/>
+        <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity grid place-content-center p-4 text-center">
+          <h3 class="text-lg font-bold mb-1">{w.title}</h3>
+          <p class="text-xs opacity-75">{w.description}</p>
+        </div>
+      </a>
+    ))}
+  </div>
+</section> 
