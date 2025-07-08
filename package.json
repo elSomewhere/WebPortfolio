@@ -1,0 +1,28 @@
+{
+  "name": "webportfolio",
+  "version": "1.0.0",
+  "description": "Esteban Lanter's Art Portfolio - GPU visualizations and generative art",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elSomewhere/WebPortfolio.git"
+  },
+  "keywords": ["portfolio", "webgpu", "generative-art", "visualization"],
+  "author": "Esteban Lanter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elSomewhere/WebPortfolio/issues"
+  },
+  "homepage": "https://estebanlanter.art",
+  "devDependencies": {
+    "astro": "^5.1.1",
+    "vite": "^6.0.5"
+  }
+}

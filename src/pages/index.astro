@@ -1,0 +1,193 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const demos = [
+  {
+    id: 'orderbook-sonar',
+    title: 'Orderbook Sonar',
+    description: 'Real-time visualization of order book dynamics',
+    thumbnail: '/demos/orderbook-sonar/thumbnail.png'
+  },
+  {
+    id: 'volatility-glitch',
+    title: 'Volatility Glitch',
+    description: 'GPU-accelerated market volatility patterns',
+    thumbnail: '/demos/volatility-glitch/thumbnail.png'
+  }
+];
+---
+
+<Layout title="Esteban Lanter | Portfolio">
+  <main>
+    <header>
+      <h1 class="glitch">ESTEBAN LANTER</h1>
+      <p>GPU visualizations / Generative art / Market aesthetics</p>
+    </header>
+
+    <section class="demos">
+      <h2>// PROJECTS</h2>
+      <div class="demo-grid">
+        {demos.map((demo) => (
+          <article class="demo-card" data-demo={demo.id}>
+            <a href={`/demos/${demo.id}`}>
+              <div class="demo-thumbnail">
+                <img src={demo.thumbnail} alt={demo.title} />
+                <div class="demo-overlay">
+                  <span class="demo-number">00{demos.indexOf(demo) + 1}</span>
+                </div>
+              </div>
+              <h3>{demo.title}</h3>
+              <p>{demo.description}</p>
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <nav class="contact">
+      <a href="https://github.com/elSomewhere" target="_blank">GitHub</a>
+      <a href="mailto:contact@estebanlanter.art">Contact</a>
+    </nav>
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    text-align: center;
+    padding: 4rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  h1 {
+    font-size: clamp(2rem, 8vw, 5rem);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin: 0;
+    background: linear-gradient(45deg, var(--accent-1), var(--accent-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  header p {
+    margin-top: 1rem;
+    opacity: 0.7;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+  }
+
+  .demos {
+    flex: 1;
+    padding: 3rem 0;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.5;
+  }
+
+  .demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .demo-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+
+  .demo-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-1);
+    box-shadow: 0 10px 40px rgba(0, 255, 255, 0.2);
+  }
+
+  .demo-card a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    padding: 1.5rem;
+  }
+
+  .demo-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: #111;
+    margin: -1.5rem -1.5rem 1rem;
+    overflow: hidden;
+  }
+
+  .demo-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+
+  .demo-card:hover .demo-thumbnail img {
+    opacity: 1;
+  }
+
+  .demo-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem 1rem;
+    background: var(--bg-primary);
+    border-left: 1px solid var(--accent-1);
+    border-bottom: 1px solid var(--accent-1);
+  }
+
+  .demo-number {
+    font-size: 0.8rem;
+    opacity: 0.5;
+  }
+
+  .demo-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+  }
+
+  .demo-card p {
+    margin: 0;
+    opacity: 0.7;
+    font-size: 0.9rem;
+  }
+
+  .contact {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .contact a {
+    color: var(--fg-primary);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+  }
+
+  .contact a:hover {
+    opacity: 1;
+  }
+</style> 

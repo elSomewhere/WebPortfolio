@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg-primary:#000;
+  --fg-primary:#fff;
+  --accent-1:#00ffff;
+  --accent-2:#ff00ff;
+}
+
+body{
+  margin:0;
+  background:var(--bg-primary);
+  color:var(--fg-primary);
+  font-family:'Space Mono','JetBrains Mono',monospace;
+  letter-spacing:.05em;
+  overflow-x:hidden;
+}
+.glitch{
+  mix-blend-mode: difference;
+  animation: flicker 1s infinite steps(2);
+}
+@keyframes flicker{
+  0%,100%{opacity:.9}
+  50%{opacity:1}
+} 

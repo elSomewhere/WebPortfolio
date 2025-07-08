@@ -1,0 +1,26 @@
+name: 🚀 Deploy GH Pages
+
+on:
+  push:
+    branches: [main]          # root changes
+  workflow_dispatch:          # manual trigger
+  repository_dispatch:        # called by sub-repos
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive    # 🔑 pulls latest demo code
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+      - run: npm ci
+      - run: npm run build         # astro build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist 
