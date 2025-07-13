@@ -6,8 +6,8 @@ export interface Project {
 }
 
 export const series = {
-  title: "Infrasonic Pulse — Triptych for the Beating Heart of the World",
-  synopsis: `Markets are information-finding machines. Their rhythms—too low, too fast, too diffuse for human ears—pulse through fiber-optic veins at frequencies we can't perceive. This triptych translates that infrasonic heartbeat into visible waveforms: data made flesh, signal made ritual.`,
+  title: "The Beating Heart of the World",
+  synopsis: `Markets generate information. Information generates behavior. Behavior generates market. A pulse, too low, too fast, too diffuse for human senses to perceive. Signal made ritual.`,
   works: [
     {
       slug: "image-crawler",
