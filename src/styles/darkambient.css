@@ -94,7 +94,6 @@ a.accent:hover { color: var(--accent-2); }
 /* ——— Data Rain ——— */
 .ticker {
   font-variant-numeric: tabular-nums;
-  white-space: nowrap;
   overflow: hidden;
   opacity: 0.75;
 }
@@ -102,6 +101,7 @@ a.accent:hover { color: var(--accent-2); }
   display: inline-block;
   padding-right: 8rem;
   animation: scroll var(--ticker-speed) linear infinite;
+  white-space: nowrap;
 }
 @keyframes scroll {
   from { transform: translateX(0); }
