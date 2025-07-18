@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "npm run build:demos && astro build",
+    "build:demos": "chmod +x scripts/build-demos.sh && ./scripts/build-demos.sh",
+    "build:portfolio-only": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
