@@ -1,0 +1,3 @@
+[submodule "demos/orderbook-3d/CppExchangeSim"]
+	path = demos/orderbook-3d/CppExchangeSim
+	url = git@github.com:elSomewhere/CppExchangeSim.git

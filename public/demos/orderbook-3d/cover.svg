@@ -1,0 +1,27 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1920" height="1080" fill="#000000"/>
+  <g opacity="0.3">
+    <!-- Grid lines for depth -->
+    <line x1="0" y1="540" x2="1920" y2="540" stroke="#00ff88" stroke-width="0.5"/>
+    <line x1="960" y1="0" x2="960" y2="1080" stroke="#00ff88" stroke-width="0.5"/>
+    <!-- 3D perspective lines -->
+    <line x1="960" y1="200" x2="800" y2="880" stroke="#ff8800" stroke-width="1" opacity="0.6"/>
+    <line x1="960" y1="200" x2="1120" y2="880" stroke="#ff8800" stroke-width="1" opacity="0.6"/>
+    <line x1="800" y1="880" x2="1120" y2="880" stroke="#ff8800" stroke-width="1" opacity="0.6"/>
+    <!-- Order book visualization bars -->
+    <rect x="880" y="400" width="8" height="40" fill="#00ff88" opacity="0.7"/>
+    <rect x="900" y="380" width="8" height="60" fill="#00ff88" opacity="0.7"/>
+    <rect x="920" y="360" width="8" height="80" fill="#00ff88" opacity="0.7"/>
+    <rect x="940" y="340" width="8" height="100" fill="#00ff88" opacity="0.7"/>
+    <rect x="972" y="340" width="8" height="100" fill="#ff4444" opacity="0.7"/>
+    <rect x="992" y="360" width="8" height="80" fill="#ff4444" opacity="0.7"/>
+    <rect x="1012" y="380" width="8" height="60" fill="#ff4444" opacity="0.7"/>
+    <rect x="1032" y="400" width="8" height="40" fill="#ff4444" opacity="0.7"/>
+    <!-- 3D cube outline -->
+    <rect x="860" y="480" width="200" height="120" fill="none" stroke="#00c0ff" stroke-width="1" opacity="0.4"/>
+    <polygon points="860,480 890,450 1090,450 1060,480" fill="none" stroke="#00c0ff" stroke-width="1" opacity="0.4"/>
+    <polygon points="1060,480 1090,450 1090,570 1060,600" fill="none" stroke="#00c0ff" stroke-width="1" opacity="0.4"/>
+  </g>
+  <text x="960" y="540" text-anchor="middle" font-family="monospace" font-size="28" fill="#00ff88" opacity="0.8">ORDERBOOK 3D</text>
+  <text x="960" y="580" text-anchor="middle" font-family="monospace" font-size="14" fill="#ff8800" opacity="0.6">TRADING SIMULATION</text>
+</svg> 
