@@ -7,6 +7,9 @@ set -e  # Exit on any error
 
 echo "🚀 Building demo submodules..."
 
+# Get absolute path to project root
+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
 # Colors for output
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
@@ -15,7 +18,7 @@ NC='\033[0m' # No Color
 # Function to build a demo
 build_demo() {
     local demo_name=$1
-    local demo_path="demos/$demo_name"
+    local demo_path="$PROJECT_ROOT/demos/$demo_name"
     
     if [ -d "$demo_path" ]; then
         echo -e "${BLUE}Building $demo_name...${NC}"
@@ -36,12 +39,13 @@ build_demo() {
             echo "Building $demo_name..."
             npm run build:submodule 2>/dev/null || npm run build
             
-            # Copy dist files to public directory
+            # Copy dist files to public directory using absolute paths
             if [ -d "dist" ]; then
                 echo "Copying built files to public directory..."
-                mkdir -p "../../public/demos/$demo_name/dist"
-                cp -r dist/* "../../public/demos/$demo_name/dist/"
-                echo -e "${GREEN}✓ $demo_name built and copied successfully${NC}"
+                TARGET_DIR="$PROJECT_ROOT/public/demos/$demo_name/dist"
+                mkdir -p "$TARGET_DIR"
+                cp -r dist/* "$TARGET_DIR/"
+                echo -e "${GREEN}✓ $demo_name built and copied to $TARGET_DIR${NC}"
             else
                 echo "Warning: No dist directory found for $demo_name"
             fi
@@ -50,7 +54,7 @@ build_demo() {
         fi
         
         # Return to root
-        cd - > /dev/null
+        cd "$PROJECT_ROOT"
     else
         echo "Warning: Demo directory $demo_path not found"
     fi
