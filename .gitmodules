@@ -1,3 +1,6 @@
 [submodule "demos/orderbook-3d/CppExchangeSim"]
 	path = demos/orderbook-3d/CppExchangeSim
 	url = git@github.com:elSomewhere/CppExchangeSim.git
+[submodule "demos/ai-stream-parse/gru_viz"]
+	path = demos/ai-stream-parse/gru_viz
+	url = git@github.com:elSomewhere/gru_viz.git
